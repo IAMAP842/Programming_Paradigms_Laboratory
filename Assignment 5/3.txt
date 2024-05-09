@@ -1,0 +1,24 @@
+#lang scheme
+(define (gcd a b)
+  (if (= b 0)
+      a
+      (gcd b (remainder a b))))
+
+(define (hcf n1 n2)
+  (if (= n2 0)
+      n1
+      (hcf n2 (remainder n1 n2))))
+
+(display "Enter the first natural number (N1): ")
+(define n1 (read))
+(display "Enter the second natural number (N2): ")
+(define n2 (read))
+
+(display "The HCF of ")
+(display n1)
+(display " and ")
+(display n2)
+(display " is ")
+(display (gcd n1 n2))
+(newline)
+

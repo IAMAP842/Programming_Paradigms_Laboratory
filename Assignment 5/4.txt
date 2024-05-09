@@ -1,0 +1,25 @@
+#lang scheme
+(define (find-largest lst)
+  (if (null? (cdr lst))
+      (car lst)
+      (let ((largest-in-rest (find-largest (cdr lst))))
+        (if (> (car lst) largest-in-rest)
+            (car lst)
+            largest-in-rest))))
+
+(define (read-natural-numbers count)
+  (if (= count 0)
+      '()
+      (cons (read) (read-natural-numbers (- count 1)))))
+
+(display "Enter the number of natural numbers: ")
+(define n (read))
+(display "Enter the natural numbers: ")
+(define numbers (read-natural-numbers n))
+(display "The largest number among ")
+(display numbers)
+(display " is ")
+(display (find-largest numbers))
+(newline)
+
+

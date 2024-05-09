@@ -1,0 +1,13 @@
+#lang scheme
+(define (fibonacci n)
+  (if (or (= n 0) (= n 1))
+      n
+      (+ (fibonacci (- n 1)) (fibonacci (- n 2)))))
+
+(display "Enter the value of N: ")
+(define n (read))
+(display "The ")
+(display n)
+(display "-th Fibonacci number is: ")
+(display (fibonacci n))
+(newline)
